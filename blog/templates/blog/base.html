@@ -11,7 +11,10 @@
 </head>
 <body>
     <h1>Header</h1>
+    <a href="{% url 'post_list' %}">View Posts</a>
+    {% if user.is_authenticated %}
     <a href="{% url 'post_new' %}">New Post</a>
+    {% endif %}
     {% block content %}
     {% endblock %}
 
